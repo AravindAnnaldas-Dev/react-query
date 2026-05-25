@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "json-server --watch src/data/usersData.json --port 5000"
+    "server": "json-server --watch src/data/usersData.json --port 5000",
+    "server:deploy": "json-server --watch src/data/usersData.json --host 0.0.0.0 --port ${PORT:-5000}",
+    "start": "npm run server:deploy"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",

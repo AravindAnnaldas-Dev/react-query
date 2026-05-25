@@ -104,6 +104,7 @@ const App = () => {
               handleAddUser();
             }
           }}
+          required
         />
 
         <button
@@ -136,6 +137,7 @@ const App = () => {
                       handleSaveEdit();
                     }
                   }}
+                  required
                 />
               ) : (
                 <div className="w-40 truncate">{user.name}</div>
