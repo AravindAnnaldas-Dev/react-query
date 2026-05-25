@@ -1,0 +1,95 @@
+{
+  "users": [
+    {
+      "id": "4",
+      "name": "Sneha Patel",
+      "email": "sneha.patel@example.com"
+    },
+    {
+      "id": "5",
+      "name": "Kiran Kumar",
+      "email": "kiran.kumar@example.com"
+    },
+    {
+      "id": "6",
+      "name": "Anjali Mehta",
+      "email": "anjali.mehta@example.com"
+    },
+    {
+      "id": "7",
+      "name": "Vikram Rao",
+      "email": "vikram.rao@example.com"
+    },
+    {
+      "id": "8",
+      "name": "Pooja Singh",
+      "email": "pooja.singh@example.com"
+    },
+    {
+      "id": "9",
+      "name": "Arjun Nair",
+      "email": "arjun.nair@example.com"
+    },
+    {
+      "id": "10",
+      "name": "Meera Joshi",
+      "email": "meera.joshi@example.com"
+    },
+    {
+      "id": "12",
+      "name": "Divya Iyer",
+      "email": "divya.iyer@example.com"
+    },
+    {
+      "id": "13",
+      "name": "Sandeep Yadav",
+      "email": "sandeep.yadav@example.com"
+    },
+    {
+      "id": "14",
+      "name": "Neha Kapoor",
+      "email": "neha.kapoor@example.com"
+    },
+    {
+      "id": "15",
+      "name": "Harsha Vardhan",
+      "email": "harsha.vardhan@example.com"
+    },
+    {
+      "id": "16",
+      "name": "Lavanya Sri",
+      "email": "lavanya.sri@example.com"
+    },
+    {
+      "id": "17",
+      "name": "Manoj Gupta",
+      "email": "manoj.gupta@example.com"
+    },
+    {
+      "id": "18",
+      "name": "Keerthi Rao",
+      "email": "keerthi.rao@example.com"
+    },
+    {
+      "id": "19",
+      "name": "Nikhil Jain",
+      "email": "nikhil.jain@example.com"
+    },
+    {
+      "id": "20",
+      "name": "Swathi Chandra",
+      "email": "swathi.chandra@example.com"
+    },
+    {
+      "name": "Aravind",
+      "email": "Aravind@gmail.com",
+      "id": "3k6of6O5x-s"
+    },
+    {
+      "name": "Venu Bandi",
+      "email": "Venu Bandi@gmail.com",
+      "id": "I9zDRYKqCuc"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

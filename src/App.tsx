@@ -1,122 +1,196 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+import { Check, Pencil, Trash2, X, Plus } from "lucide-react";
+
+import { useUsers } from "./hooks/useUsers";
+import { useCreateUser } from "./hooks/useCreateUser";
+import { useDeleteUser } from "./hooks/useDeleteUser";
+import { useUpdateUser } from "./hooks/useUpdateUser";
+
+const App = () => {
+  // FETCH USERS
+  const { data: users, isLoading, isError } = useUsers();
+
+  // MUTATIONS
+  const createMutation = useCreateUser();
+
+  const updateMutation = useUpdateUser();
+
+  const deleteMutation = useDeleteUser();
+
+  // CREATE USER STATE
+  const [newUserName, setNewUserName] = useState("");
+
+  // EDIT USER STATES
+  const [editingUserId, setEditingUserId] = useState<number | null>(null);
+  const [editingName, setEditingName] = useState("");
+
+  // ADD USER
+  const handleAddUser = () => {
+    if (!newUserName.trim()) return;
+
+    createMutation.mutate(
+      {
+        name: newUserName,
+        email: `${newUserName}@gmail.com`,
+      },
+      {
+        onSuccess: () => {
+          setNewUserName("");
+        },
+      },
+    );
+  };
+
+  // DELETE USER
+  const handleDeleteUser = (id: number) => {
+    deleteMutation.mutate(id);
+  };
+
+  // START EDIT
+  const handleStartEdit = (id: number, currentName: string) => {
+    setEditingUserId(id);
+
+    setEditingName(currentName);
+  };
+
+  // CANCEL EDIT
+  const handleCancelEdit = () => {
+    setEditingUserId(null);
+
+    setEditingName("");
+  };
+
+  // SAVE EDIT
+  const handleSaveEdit = () => {
+    if (!editingName.trim()) return;
+
+    if (!editingUserId) return;
+
+    updateMutation.mutate(
+      {
+        id: editingUserId,
+        name: editingName,
+      },
+      {
+        onSuccess: () => {
+          handleCancelEdit();
+        },
+      },
+    );
+  };
+
+  // LOADING
+  if (isLoading) {
+    return <div className="p-4">Fetching Users...</div>;
+  }
+
+  // ERROR
+  if (isError) {
+    return <div className="p-4">Error Fetching Users...</div>;
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
+    <div className="w-full p-4 flex flex-col gap-4">
+      {/* ADD USER */}
+      <div className="flex items-center gap-2">
+        <input
+          value={newUserName}
+          onChange={(e) => setNewUserName(e.target.value)}
+          placeholder="Enter user name"
+          className="border rounded px-3 py-2"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleAddUser();
+            }
+          }}
+          required
+        />
+
         <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
+          onClick={handleAddUser}
+          disabled={createMutation.isPending}
+          className="h-10 px-4 border rounded flex items-center gap-2 cursor-pointer"
         >
-          Count is {count}
+          <Plus size={16} />
+
+          {createMutation.isPending ? "Adding..." : "Add"}
         </button>
-      </section>
+      </div>
 
-      <div className="ticks"></div>
+      {/* USERS LIST */}
+      <div className="flex flex-col gap-3">
+        {users?.map((user) => {
+          const isEditing = editingUserId === user.id;
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+          return (
+            <div key={user.id} className="flex items-center gap-3">
+              {/* NAME / INPUT */}
+              {isEditing ? (
+                <input
+                  value={editingName}
+                  onChange={(e) => setEditingName(e.target.value)}
+                  autoFocus
+                  className="border rounded px-2 py-1"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      handleSaveEdit();
+                    }
+                  }}
+                  required
+                />
+              ) : (
+                <div className="w-40 truncate">{user.name}</div>
+              )}
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
-}
+              {/* ACTIONS */}
+              <div className="flex items-center gap-2">
+                {isEditing ? (
+                  <>
+                    {/* SAVE */}
+                    <button
+                      onClick={handleSaveEdit}
+                      disabled={updateMutation.isPending}
+                      className="size-7 border rounded-full flex items-center justify-center cursor-pointer"
+                    >
+                      <Check size={16} color="green" />
+                    </button>
 
-export default App
+                    {/* CANCEL */}
+                    <button
+                      onClick={handleCancelEdit}
+                      className="size-7 border rounded-full flex items-center justify-center cursor-pointer"
+                    >
+                      <X size={16} color="red" />
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    {/* EDIT */}
+                    <button
+                      onClick={() => handleStartEdit(user.id, user.name)}
+                      className="size-7 border rounded-full flex items-center justify-center cursor-pointer"
+                    >
+                      <Pencil size={16} />
+                    </button>
+
+                    {/* DELETE */}
+                    <button
+                      onClick={() => handleDeleteUser(user.id)}
+                      disabled={deleteMutation.isPending}
+                      className="size-7 border rounded-full flex items-center justify-center cursor-pointer"
+                    >
+                      <Trash2 size={16} color="red" />
+                    </button>
+                  </>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default App;
