@@ -1,124 +1,95 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "Aravind",
-      "email": "aravind@example.com",
-      "role": "Frontend Developer"
-    },
-    {
-      "id": "2",
-      "name": "Suresh",
-      "email": "suresh@example.com",
-      "role": "Backend Developer"
-    },
-    {
-      "id": "3",
-      "name": "Anjali",
-      "email": "anjali@example.com",
-      "role": "UI Designer"
-    },
-    {
       "id": "4",
-      "name": "Rahul",
-      "email": "rahul@example.com",
-      "role": "Project Manager"
+      "name": "Sneha Patel",
+      "email": "sneha.patel@example.com"
     },
     {
       "id": "5",
-      "name": "Priya",
-      "email": "priya@example.com",
-      "role": "QA Engineer"
+      "name": "Kiran Kumar",
+      "email": "kiran.kumar@example.com"
     },
     {
       "id": "6",
-      "name": "Kiran",
-      "email": "kiran@example.com",
-      "role": "DevOps Engineer"
+      "name": "Anjali Mehta",
+      "email": "anjali.mehta@example.com"
     },
     {
       "id": "7",
-      "name": "Meghana",
-      "email": "meghana@example.com",
-      "role": "Product Designer"
+      "name": "Vikram Rao",
+      "email": "vikram.rao@example.com"
     },
     {
       "id": "8",
-      "name": "Vamsi",
-      "email": "vamsi@example.com",
-      "role": "Mobile Developer"
+      "name": "Pooja Singh",
+      "email": "pooja.singh@example.com"
     },
     {
       "id": "9",
-      "name": "Sneha",
-      "email": "sneha@example.com",
-      "role": "Business Analyst"
+      "name": "Arjun Nair",
+      "email": "arjun.nair@example.com"
     },
     {
       "id": "10",
-      "name": "Rohit",
-      "email": "rohit@example.com",
-      "role": "Software Engineer"
-    },
-    {
-      "id": "11",
-      "name": "Divya",
-      "email": "divya@example.com",
-      "role": "Scrum Master"
+      "name": "Meera Joshi",
+      "email": "meera.joshi@example.com"
     },
     {
       "id": "12",
-      "name": "Nikhil",
-      "email": "nikhil@example.com",
-      "role": "Full Stack Developer"
+      "name": "Divya Iyer",
+      "email": "divya.iyer@example.com"
     },
     {
       "id": "13",
-      "name": "Pooja",
-      "email": "pooja@example.com",
-      "role": "HR Manager"
+      "name": "Sandeep Yadav",
+      "email": "sandeep.yadav@example.com"
     },
     {
       "id": "14",
-      "name": "Tarun",
-      "email": "tarun@example.com",
-      "role": "Cloud Engineer"
+      "name": "Neha Kapoor",
+      "email": "neha.kapoor@example.com"
     },
     {
       "id": "15",
-      "name": "Keerthi",
-      "email": "keerthi@example.com",
-      "role": "Data Analyst"
+      "name": "Harsha Vardhan",
+      "email": "harsha.vardhan@example.com"
     },
     {
       "id": "16",
-      "name": "Ajay",
-      "email": "ajay@example.com",
-      "role": "Tech Lead"
+      "name": "Lavanya Sri",
+      "email": "lavanya.sri@example.com"
     },
     {
       "id": "17",
-      "name": "Lavanya",
-      "email": "lavanya@example.com",
-      "role": "Support Engineer"
+      "name": "Manoj Gupta",
+      "email": "manoj.gupta@example.com"
     },
     {
       "id": "18",
-      "name": "Harish",
-      "email": "harish@example.com",
-      "role": "Security Engineer"
+      "name": "Keerthi Rao",
+      "email": "keerthi.rao@example.com"
     },
     {
       "id": "19",
-      "name": "Bhavana",
-      "email": "bhavana@example.com",
-      "role": "Content Strategist"
+      "name": "Nikhil Jain",
+      "email": "nikhil.jain@example.com"
     },
     {
       "id": "20",
-      "name": "Manoj",
-      "email": "manoj@example.com",
-      "role": "AI Engineer"
+      "name": "Swathi Chandra",
+      "email": "swathi.chandra@example.com"
+    },
+    {
+      "name": "Aravind",
+      "email": "Aravind@gmail.com",
+      "id": "3k6of6O5x-s"
+    },
+    {
+      "name": "Venu Bandi",
+      "email": "Venu Bandi@gmail.com",
+      "id": "I9zDRYKqCuc"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
