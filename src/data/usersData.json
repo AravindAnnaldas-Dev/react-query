@@ -1,0 +1,124 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Aravind",
+      "email": "aravind@example.com",
+      "role": "Frontend Developer"
+    },
+    {
+      "id": "2",
+      "name": "Suresh",
+      "email": "suresh@example.com",
+      "role": "Backend Developer"
+    },
+    {
+      "id": "3",
+      "name": "Anjali",
+      "email": "anjali@example.com",
+      "role": "UI Designer"
+    },
+    {
+      "id": "4",
+      "name": "Rahul",
+      "email": "rahul@example.com",
+      "role": "Project Manager"
+    },
+    {
+      "id": "5",
+      "name": "Priya",
+      "email": "priya@example.com",
+      "role": "QA Engineer"
+    },
+    {
+      "id": "6",
+      "name": "Kiran",
+      "email": "kiran@example.com",
+      "role": "DevOps Engineer"
+    },
+    {
+      "id": "7",
+      "name": "Meghana",
+      "email": "meghana@example.com",
+      "role": "Product Designer"
+    },
+    {
+      "id": "8",
+      "name": "Vamsi",
+      "email": "vamsi@example.com",
+      "role": "Mobile Developer"
+    },
+    {
+      "id": "9",
+      "name": "Sneha",
+      "email": "sneha@example.com",
+      "role": "Business Analyst"
+    },
+    {
+      "id": "10",
+      "name": "Rohit",
+      "email": "rohit@example.com",
+      "role": "Software Engineer"
+    },
+    {
+      "id": "11",
+      "name": "Divya",
+      "email": "divya@example.com",
+      "role": "Scrum Master"
+    },
+    {
+      "id": "12",
+      "name": "Nikhil",
+      "email": "nikhil@example.com",
+      "role": "Full Stack Developer"
+    },
+    {
+      "id": "13",
+      "name": "Pooja",
+      "email": "pooja@example.com",
+      "role": "HR Manager"
+    },
+    {
+      "id": "14",
+      "name": "Tarun",
+      "email": "tarun@example.com",
+      "role": "Cloud Engineer"
+    },
+    {
+      "id": "15",
+      "name": "Keerthi",
+      "email": "keerthi@example.com",
+      "role": "Data Analyst"
+    },
+    {
+      "id": "16",
+      "name": "Ajay",
+      "email": "ajay@example.com",
+      "role": "Tech Lead"
+    },
+    {
+      "id": "17",
+      "name": "Lavanya",
+      "email": "lavanya@example.com",
+      "role": "Support Engineer"
+    },
+    {
+      "id": "18",
+      "name": "Harish",
+      "email": "harish@example.com",
+      "role": "Security Engineer"
+    },
+    {
+      "id": "19",
+      "name": "Bhavana",
+      "email": "bhavana@example.com",
+      "role": "Content Strategist"
+    },
+    {
+      "id": "20",
+      "name": "Manoj",
+      "email": "manoj@example.com",
+      "role": "AI Engineer"
+    }
+  ]
+}
